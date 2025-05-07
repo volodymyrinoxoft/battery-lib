@@ -10,14 +10,12 @@ export default {
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: 'index.js',
+
     library: {
       type: 'umd',
       name: 'battery-lib',
     },
     clean: false,
-  },
-  experiments: {
-    outputModule: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
