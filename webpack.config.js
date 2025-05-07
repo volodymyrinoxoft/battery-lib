@@ -1,7 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -10,13 +9,10 @@ export default {
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: 'index.js',
-
-    library: {
-      type: 'umd',
-      name: 'battery-lib',
-    },
-    clean: false,
+    library: { type: 'module' },
+    environment: { module: true },
   },
+  experiments: { outputModule: true },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
@@ -38,9 +34,7 @@ export default {
       },
     ],
   },
-  externals: {
-    react: 'react',
-    'react-dom': 'react-dom',
-  },
+  externals: 'react',
+  externalsType: 'module',
   target: ['web', 'es5'],
 };
