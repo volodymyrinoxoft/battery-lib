@@ -1,6 +1,6 @@
 {
   "name": "battery-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,15 +8,18 @@
     "lib/",
     "README.md",
     "LICENSE",
-    "package.json",
-    "index.d.ts"
+    "package.json"
   ],
+  "peerDependencies": {
+    "react": "^17 || ^18 || ^18.2.0 || ^19",
+    "react-dom": "^17 || ^18 || ^18.2.0 || ^19"
+  },
   "scripts": {
     "lint": "eslint ./src --ext .ts,.tsx",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "webpack --mode=production",
-    "build": "npm run build:types && npm run build:js"
+    "build": "npm run build:js && npm run build:types"
   },
   "keywords": [],
   "author": "",
@@ -43,9 +46,9 @@
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1",
-    "vite": "^6.3.4",
     "webpack": "^5.99.7",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
