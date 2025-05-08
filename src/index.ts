@@ -1,2 +1,2 @@
-export * from './useBattery';
-export * from './Battery';
+export { useBattery } from './useBattery';
+export { Battery } from './Battery';
