@@ -34,7 +34,10 @@ export default {
       },
     ],
   },
-  externals: 'react',
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
+  },
   externalsType: 'module',
   target: ['web', 'es5'],
 };
